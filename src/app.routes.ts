@@ -1,13 +1,25 @@
 import {RouterConfig, provideRouter} from '@angular/router';
-import { Home } from './components/home/home.component';
-import { About } from './components/about/about.component';
+
+// Components
+import { Search } from './components/search/search.component';
+import { Results } from './components/results/results.component';
+import { Detail } from './components/detail/detail.component';
 
 const routes: RouterConfig = [
-    { path: '',      component: Home },
-    { path: 'home',  component: Home },
+    // Search Top
+    { path: '',      component: Search },
+    { path: 'search',  component: Search },
     // make sure you match the component type string to the require in asyncRoutes
-    { path: 'about', component: About},
-    { path: '**',    component: Home }
+
+    // Search Results
+    // { path: 'list', component: List},
+    { path: 'results', component: Results},
+
+    // Hote Detail
+    { path: 'detail', component: Detail},
+
+    // Default
+    { path: '**',     component: Search }
 ];
 
 export const appRouterProviders = [
