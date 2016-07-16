@@ -1,0 +1,40 @@
+<p *ngIf="!hotel">Loading hotel detail...</p>
+
+<div *ngIf="hotel">
+	<h1>
+		<button (click)="goToSearchResults()" title="Go back to search results">&larr;</button>
+		<span>{{hotel.name}}</span>
+		<hotel-rating [rating]="hotel.stars"></hotel-rating>
+	</h1>
+
+	<p>{{hotel.info_text}}</p>
+
+
+	<h2>Available rooms</h2>
+
+	<room-info *ngFor="let roomKey of arrayKeys(rooms)" [room]="rooms[roomKey]"></room-info>
+
+
+	<h2>Contact info</h2>
+
+	<table>
+	<tbody>
+		<tr>
+			<th>Email</th>
+			<td><a href="mailto:{{hotel.mail}}">{{hotel.mail}}</a></td>
+		</tr>
+		<tr>
+			<th>Phone</th>
+			<td>{{hotel.phone}}</td>
+		</tr>
+		<tr>
+			<th>Address</th>
+			<td>
+				{{hotel.address_street}},<br />
+				{{hotel.address_city}},<br />
+				{{hotel.address_psc}}
+			</td>
+		</tr>
+	</tbody>
+	</table>
+</div>

@@ -17,7 +17,7 @@ import { EHotelService } from './services/ehotel.service';
 
     <a [routerLink]="['./']">Search</a>
     <a [routerLink]="['./results']">Results</a>
-    <a [routerLink]="['./detail']">Detail</a>
+    <a [routerLink]="['/detail', 'c789de43bbc0']">Detail</a>
 
     <router-outlet></router-outlet>
   `

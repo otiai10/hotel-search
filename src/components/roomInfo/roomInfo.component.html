@@ -1,0 +1,31 @@
+<div *ngIf="room.state === 'active'">
+	<table>
+	<tbody>
+		<tr>
+			<th colspan="2">{{room.name}}</th>
+		</tr>
+		<tr>
+			<th>Description</th>
+			<td colspan="2">{{room.info}}</td>
+		</tr>
+		<tr>
+			<th>Beds capacity</th>
+			<td>{{room.person_count}}</td>
+		</tr>
+		<tr>
+			<th>Extra bed(s)</th>
+			<td>{{room.extra_bed}}</td>
+		</tr>
+		<tr>
+			<th>Breakfast included</th>
+			<td>{{room.breakfast_included ? 'yes' : 'no'}}</td>
+		</tr>
+		<tr>
+			<th>Barrier access</th>
+			<td>{{room.barrier_access === 1 ? 'yes' : 'no'}}</td>
+		</tr>
+	</tbody>
+	</table>
+
+	<hr />
+</div>

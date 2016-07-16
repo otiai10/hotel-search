@@ -16,7 +16,7 @@ const routes: RouterConfig = [
     { path: 'results', component: Results},
 
     // Hote Detail
-    { path: 'detail', component: Detail},
+    { path: 'detail/:id', component: Detail},
 
     // Default
     { path: '**',     component: Search }
