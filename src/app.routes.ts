@@ -12,7 +12,6 @@ const routes: RouterConfig = [
     // make sure you match the component type string to the require in asyncRoutes
 
     // Search Results
-    // { path: 'list', component: List},
     { path: 'results', component: Results},
 
     // Hote Detail

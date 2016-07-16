@@ -46,9 +46,9 @@ export class HotelSearch {
 
   toParams(): Object {
     return {
-      place:    this.place,
-      checkin:  this.getCheckinString(),
-      checkout: this.getCheckoutString()
+      q:    this.place,
+      check_in:  this.getCheckinString(),
+      check_out: this.getCheckoutString()
     };
   }
 }
