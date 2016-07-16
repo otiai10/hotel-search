@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 import {NgForm} from '@angular/forms';
 import {HotelSearch} from '../../models/hotel-search';
@@ -34,10 +35,9 @@ import {HotelSearch} from '../../models/hotel-search';
 export class Search {
   model = HotelSearch.initByStoredSettings();
 
-  desabled = true;
+  constructor(public router: Router) {}
 
   onSubmit() {
-    console.log(this.model);
-    // TODO: Jump to results
+    this.router.navigate(['results'], { queryParams: this.model.toParams() });
   }
 }

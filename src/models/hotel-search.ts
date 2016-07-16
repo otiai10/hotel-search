@@ -43,4 +43,12 @@ export class HotelSearch {
     }
     return errors;
   }
+
+  toParams(): Object {
+    return {
+      place:    this.place,
+      checkin:  this.getCheckinString(),
+      checkout: this.getCheckoutString()
+    };
+  }
 }
