@@ -7,34 +7,41 @@
 		<hotel-rating [rating]="hotel.stars"></hotel-rating>
 	</h1>
 
-	<p>{{hotel.info_text}}</p>
+	<div style="display: flex">
+		<div style="flex: 1">
+			<img src={{getImageURL()}} width="90%"/>
+		</div>
+		<div style="flex: 2">
+			<p>{{hotel.info_text}}</p>
 
 
-	<h2>Available rooms</h2>
+			<h2>Available rooms</h2>
 
-	<room-info *ngFor="let roomKey of arrayKeys(rooms)" [room]="rooms[roomKey]"></room-info>
+			<room-info *ngFor="let roomKey of arrayKeys(rooms)" [room]="rooms[roomKey]"></room-info>
 
 
-	<h2>Contact info</h2>
+			<h2>Contact info</h2>
 
-	<table>
-	<tbody>
-		<tr>
-			<th>Email</th>
-			<td><a href="mailto:{{hotel.mail}}">{{hotel.mail}}</a></td>
-		</tr>
-		<tr>
-			<th>Phone</th>
-			<td>{{hotel.phone}}</td>
-		</tr>
-		<tr>
-			<th>Address</th>
-			<td>
-				{{hotel.address_street}},<br />
-				{{hotel.address_city}},<br />
-				{{hotel.address_psc}}
-			</td>
-		</tr>
-	</tbody>
-	</table>
+			<table>
+			<tbody>
+				<tr>
+					<th>Email</th>
+					<td><a href="mailto:{{hotel.mail}}">{{hotel.mail}}</a></td>
+				</tr>
+				<tr>
+					<th>Phone</th>
+					<td>{{hotel.phone}}</td>
+				</tr>
+				<tr>
+					<th>Address</th>
+					<td>
+						{{hotel.address_street}},<br />
+						{{hotel.address_city}},<br />
+						{{hotel.address_psc}}
+					</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
 </div>
