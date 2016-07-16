@@ -16,8 +16,8 @@ export class Detail {
 	private sub: any;
 
 
-	constructor( 
-		private route: ActivatedRoute, 
+	constructor(
+		private route: ActivatedRoute,
 		private router: Router,
 		private hotelService: EHotelService ) {}
 
@@ -44,5 +44,9 @@ export class Detail {
 
     public arrayKeys( obj ) {
     	return Object.keys( obj );
+    }
+
+    getImageURL() {
+      return `https://www.ehotel.cz/images_hotels/normal/${this.hotel.profile_image}.jpg`
     }
 }
