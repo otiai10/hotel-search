@@ -1,5 +1,6 @@
 import {Component, ViewEncapsulation} from "@angular/core";
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { EHotelService } from './services/ehotel.service';
 
 @Component({
     selector: 'app',
@@ -10,6 +11,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     styles: [
         require('./scss/base.scss')
     ],
+    providers: [EHotelService],
     template: `
     This is our app.
 

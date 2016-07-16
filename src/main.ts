@@ -1,10 +1,12 @@
 import {bootstrap}    from '@angular/platform-browser-dynamic';
+import { HTTP_PROVIDERS } from '@angular/http';
 import {AppComponent} from './app.component';
 import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
 
 import {appRouterProviders} from './app.routes';
 
 bootstrap(AppComponent, [
+    HTTP_PROVIDERS,
     appRouterProviders,
     FIREBASE_PROVIDERS,
     defaultFirebase({
@@ -14,4 +16,3 @@ bootstrap(AppComponent, [
         storageBucket: "ehotel-7341a.appspot.com"
     })
 ]);
-
