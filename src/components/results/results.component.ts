@@ -1,15 +1,18 @@
 import {Component} from '@angular/core';
 import {EHotelService} from "../../services/ehotel.service";
-import {Router} from "@angular/router";
+import {ROUTER_DIRECTIVES, Router} from "@angular/router";
 import {IterableObjectPipe} from '../../pipes/iterableObject.pipe';
 
 @Component({
     selector: 'results-component',
+    directives: [
+        ...ROUTER_DIRECTIVES,
+    ],
     styles: [require('./results.component.scss')],
     template: `
 <h1>We have found {{countFound}} hotels matching your inquiry</h1>
 <div class="list list--default">
-    <div *ngFor="let hotel of hotels" class="hotel__card">
+    <div *ngFor="let hotel of hotels" class="hotel__card" [routerLink]="['/detail', hotel.api_key]">
         <h2>{{hotel.name}}<span class="hotel__stars">{{hotel.stars}}</span></h2>
         <div class="hotel__city">{{hotel.address_city}}</div>
         <div class="hotel__rooms">
