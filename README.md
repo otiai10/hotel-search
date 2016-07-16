@@ -1,5 +1,7 @@
 # ng2-playground
 
+[![Join the chat at https://gitter.im/otiai10/hotel-search](https://badges.gitter.im/otiai10/hotel-search.svg)](https://gitter.im/otiai10/hotel-search?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is playground for Angular2 rc.1 built with webpack.
 
 - using rc.4 component router (`@angular/router`)
