@@ -5,7 +5,7 @@ import {FirebaseListObservable, AngularFire} from "angularfire2/angularfire2";
     selector: 'results-component',
     styles: [ require('./results.component.scss')],
     template: `
-        <h1>Hotel Search!!!!!</h1>
+        <h1>Results of searching hotels!!</h1>
         `
     //     <div *ngFor="let hotel of hotels | async">
     //         {{hotel.name}}
