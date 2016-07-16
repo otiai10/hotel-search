@@ -7,6 +7,9 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     directives: [
         ...ROUTER_DIRECTIVES,
     ],
+    styles: [
+        require('./scss/base.scss')
+    ],
     template: `
     This is our app.
 

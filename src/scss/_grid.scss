@@ -1,0 +1,184 @@
+.grid {
+  &__container {
+    @include clearfix();
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - #{$grid-gutter-width});
+
+    @include media('screen', '>=small') {
+      max-width: (map-get($breakpoints, 'small') - 30px);
+    }
+
+    @include media('screen', '>=medium') {
+      max-width: 960px;
+    }
+  }
+
+  @include media('screen') {
+    &__col--offset-0 {
+      margin-left: 0;
+    }
+
+    @for $i from 1 through $grid-columns {
+      &__col--#{$i} {
+        @include col();
+        width: (($i / $grid-columns) * 100%);
+      }
+
+      &__col--offset-#{$i} {
+        margin-left: (($i / $grid-columns) * 100%);
+      }
+    }
+
+    @for $i from 1 through 5 {
+      &__col--fifths-#{$i} {
+        @include col();
+        width: (($i / 5) * 100%);
+      }
+
+      &__col--fifths-offset-#{$i} {
+        margin-left: (($i / 5) * 100%);
+      }
+    }
+  }
+
+  @include media('screen', '>=xsmall') {
+    &__col--xsmall-offset-0 {
+      margin-left: 0;
+    }
+
+    @for $i from 1 through $grid-columns {
+      &__col--xsmall-#{$i} {
+        @include col();
+        width: (($i / $grid-columns) * 100%);
+      }
+
+      &__col--xsmall-offset-#{$i} {
+        margin-left: (($i / $grid-columns) * 100%);
+      }
+    }
+
+    @for $i from 1 through 5 {
+      &__col--fifths-xsmall-#{$i} {
+        @include col();
+        width: (($i / 5) * 100%);
+      }
+
+      &__col--fifths-xsmall-offset-#{$i} {
+        margin-left: (($i / 5) * 100%);
+      }
+    }
+  }
+
+  @include media('screen', '>=small') {
+    &__col--small-offset-0 {
+      margin-left: 0;
+    }
+
+    @for $i from 1 through $grid-columns {
+      &__col--small-#{$i} {
+        @include col();
+        width: (($i / $grid-columns) * 100%);
+      }
+
+      &__col--small-offset-#{$i} {
+        margin-left: (($i / $grid-columns) * 100%);
+      }
+    }
+
+    @for $i from 1 through 5 {
+      &__col--fifths-small-#{$i} {
+        @include col();
+        width: (($i / 5) * 100%);
+      }
+
+      &__col--fifths-small-offset-#{$i} {
+        margin-left: (($i / 5) * 100%);
+      }
+    }
+  }
+
+  @include media('screen', '>=medium') {
+    &__col--medium-offset-0 {
+      margin-left: 0;
+    }
+
+    @for $i from 1 through $grid-columns {
+      &__col--medium-#{$i} {
+        @include col();
+        width: (($i / $grid-columns) * 100%);
+      }
+
+      &__col--medium-offset-#{$i} {
+        margin-left: (($i / $grid-columns) * 100%);
+      }
+    }
+
+    @for $i from 1 through 5 {
+      &__col--fifths-medium-#{$i} {
+        @include col();
+        width: (($i / 5) * 100%);
+      }
+
+      &__col--fifths-medium-offset-#{$i} {
+        margin-left: (($i / 5) * 100%);
+      }
+    }
+  }
+
+  @include media('screen', '>=large') {
+    &__col--large-offset-0 {
+      margin-left: 0;
+    }
+
+    @for $i from 1 through $grid-columns {
+      &__col--large-#{$i} {
+        @include col();
+        width: (($i / $grid-columns) * 100%);
+      }
+
+      &__col--large-offset-#{$i} {
+        margin-left: (($i / $grid-columns) * 100%);
+      }
+    }
+
+    @for $i from 1 through 5 {
+      &__col--fifths-large-#{$i} {
+        @include col();
+        width: (($i / 5) * 100%);
+      }
+
+      &__col--fifths-large-offset-#{$i} {
+        margin-left: (($i / 5) * 100%);
+      }
+    }
+  }
+
+  @include media('screen', '>=xlarge') {
+    &__col--xlarge-offset-0 {
+      margin-left: 0;
+    }
+
+    @for $i from 1 through $grid-columns {
+      &__col--xlarge-#{$i} {
+        @include col();
+        width: (($i / $grid-columns) * 100%);
+      }
+
+      &__col--xlarge-offset-#{$i} {
+        margin-left: (($i / $grid-columns) * 100%);
+      }
+    }
+
+    @for $i from 1 through 5 {
+      &__col--fifths-xlarge-#{$i} {
+        @include col();
+        width: (($i / 5) * 100%);
+      }
+
+      &__col--fifths-xlarge-offset-#{$i} {
+        margin-left: (($i / 5) * 100%);
+      }
+    }
+  }
+}
