@@ -44,6 +44,7 @@
   "devDependencies": {
     "es6-shim": "^0.35.1",
     "file-loader": "^0.8.5",
+    "include-media": "^1.4.6",
     "raw-loader": "^0.5.1",
     "sass-loader": "^3.2.0",
     "ts-loader": "^0.8.1",
