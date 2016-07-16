@@ -9,10 +9,11 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     ],
     template: `
     This is our app.
-    
-    <a [routerLink]="['./']">Home</a>
-    <a [routerLink]="['./about']">About</a>
-    
+
+    <a [routerLink]="['./']">Search</a>
+    <a [routerLink]="['./results']">Results</a>
+    <a [routerLink]="['./detail']">Detail</a>
+
     <router-outlet></router-outlet>
   `
 })
