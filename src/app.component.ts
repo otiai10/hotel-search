@@ -13,6 +13,7 @@ import { EHotelService } from './services/ehotel.service';
     ],
     providers: [EHotelService],
     template: `
+    <div class="grid__container">
     This is our app.
 
     <a [routerLink]="['./']">Search</a>
@@ -20,6 +21,7 @@ import { EHotelService } from './services/ehotel.service';
     <a [routerLink]="['/detail', 'c789de43bbc0']">Detail</a>
 
     <router-outlet></router-outlet>
+    </div>
   `
 })
 export class AppComponent {
