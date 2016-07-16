@@ -21,7 +21,12 @@ import {HotelSearch} from '../../models/hotel-search';
             <label for="checkout">Check Out</label>
             <input name="checkout" type="datetime-local" [value]="model.getCheckoutString()" [(ngModel)]="model.checkout" />
           </div>
-          <button [disabled]="!model.validate()" type="submit">SEARCH!!</button>
+          <ul>
+            <li *ngFor="let error of model.validate()">
+              {{error.label}}: {{error.message}}
+            </li>
+          </ul>
+          <button [disabled]="model.validate().length" type="submit">SEARCH!!</button>
         </form>
       </div>
     `

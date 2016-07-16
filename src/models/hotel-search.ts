@@ -2,8 +2,7 @@ export class HotelSearch {
   constructor(
     public place:    string,
     public checkin:  Date,
-    public checkout: Date,
-    public errors:  Object[]
+    public checkout: Date
   ) {}
 
   public static initByStoredSettings() {
@@ -11,8 +10,7 @@ export class HotelSearch {
     return new HotelSearch(
       'victoria',
       new Date(),
-      new Date(Date.now() + _3days),
-      []
+      new Date(Date.now() + _3days)
     );
   }
 
@@ -33,16 +31,16 @@ export class HotelSearch {
     return _d.toISOString().slice(0, 16);
   }
 
-  validate(): boolean {
-    this.errors = [];
+  validate(): Object[] {
+    let errors: Object[] = [];
     const checkin: Date = (typeof this.checkin  == 'string') ? new Date(this.checkin)  : this.checkin;
     const checkout:Date = (typeof this.checkout == 'string') ? new Date(this.checkout) : this.checkout;
     if (checkout.getTime() < checkin.getTime() + 100) {
-      this.errors.push({date_range: 'invalid datetime range'});
+      errors.push({ label: 'date', message: 'invalid datetime range'});
     }
     if (!this.place) {
-      this.errors.push({place: 'missing'});
+      errors.push({ label: 'place', message: 'missing'});
     }
-    return this.errors.length == 0;
+    return errors;
   }
 }
