@@ -21,7 +21,7 @@
 
     @for $i from 1 through $grid-columns {
       &__col--#{$i} {
-        @include col();
+        @include col-base();
         width: (($i / $grid-columns) * 100%);
       }
 

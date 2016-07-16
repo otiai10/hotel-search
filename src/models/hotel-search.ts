@@ -1,8 +1,9 @@
 export class HotelSearch {
   constructor(
-    public place:    string,
-    public checkin:  Date,
-    public checkout: Date
+    public place:      string,
+    public checkin:    Date,
+    public checkout:   Date,
+    public facilities: Array<any>
   ) {}
 
   public static initByStoredSettings() {
@@ -10,7 +11,24 @@ export class HotelSearch {
     return new HotelSearch(
       'Praha',
       new Date(),
-      new Date(Date.now() + _3days)
+      new Date(Date.now() + _3days),
+      [
+        {
+          label: 'WiFi',
+          val: 'wi-fi',
+          state: false
+        },
+        {
+          label: 'Fitness',
+          val: 'fitness-centrum',
+          state: false
+        },
+        {
+          label: 'Parking',
+          val: 'parkoviste',
+          state: false
+        }
+      ]
     );
   }
 
@@ -20,6 +38,13 @@ export class HotelSearch {
 
   getCheckoutString() {
     return this.dateToISOString(this.checkout);
+  }
+
+  getFacilities() {
+    let res:string = Array.from(this.facilities.filter(_ => _.state), facility => '"' + facility.val + '"').toString();
+    res = '[' + res + ']';
+
+    return res;
   }
 
   /**
@@ -48,7 +73,8 @@ export class HotelSearch {
     return {
       q:    this.place,
       check_in:  this.getCheckinString(),
-      check_out: this.getCheckoutString()
+      check_out: this.getCheckoutString(),
+      facilities: this.getFacilities()
     };
   }
 }

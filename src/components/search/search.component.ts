@@ -7,7 +7,7 @@ import {HotelSearch} from '../../models/hotel-search';
 @Component({
     selector: 'search-component',
     styles: [
-      require('../../scss/search.scss')
+      require('./search.component.scss')
     ],
     template: `
       <div class='grid__col--12'>
@@ -24,6 +24,14 @@ import {HotelSearch} from '../../models/hotel-search';
           <div class="input-group">
             <label class="grid__col--3" for="checkout">Check Out</label>
             <input class="grid__col--9" name="checkout" type="datetime-local" [value]="model.getCheckoutString()" [(ngModel)]="model.checkout" />
+          </div>
+          <div class="input-group">
+            <div class="grid__col--3">Facilities</div>
+            <div class="grid__col--9">
+              <label *ngFor="let box of model.facilities" class="display--block">
+                <input type="checkbox" [(ngModel)]="box.state">{{box.label}}
+              </label>
+            </div>
           </div>
           <ul class="errors">
             <li *ngFor="let error of model.validate()">
