@@ -8,7 +8,7 @@ import {IterableObjectPipe} from '../../pipes/iterableObject.pipe';
   pipes: [IterableObjectPipe],
   template: `
     <div class="grid__col--4">
-      <div class="hotel__card" (click)="onClick()">
+      <div class="hotel__card" [ngClass]="{disabled: !hotel.api_key}" (click)="onClick()">
         <h2>{{hotel.name}}<span class="hotel__stars">{{hotel.stars}}</span></h2>
         <div style="display: flex;">
           <div style="flex: 1;">
@@ -34,6 +34,7 @@ export class HotelListItem {
   constructor(private router: Router) {}
 
   onClick() {
+    if (!this.hotel.api_key) return;
     this.router.navigate(['detail', this.hotel.api_key]);
   }
 
