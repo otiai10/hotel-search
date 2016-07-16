@@ -6,28 +6,34 @@ import {HotelSearch} from '../../models/hotel-search';
 
 @Component({
     selector: 'search-component',
+    styles: [
+      require('../../scss/search.scss')
+    ],
     template: `
-      <div>
+      <div class='grid__col--12'>
         <h1>Do search hotel!!!!!</h1>
         <form (submit)="onSubmit()">
           <div class="input-group">
-            <label for="place">place</label>
-            <input name="place" type="text" [(ngModel)]="model.place" />
+            <label class="grid__col--3" for="place">place</label>
+            <input class="grid__col--9" name="place" type="text" [(ngModel)]="model.place" />
           </div>
           <div class="input-group">
-            <label for="checkin">Check In</label>
-            <input name="checkin" type="datetime-local" [value]="model.getCheckinString()" [(ngModel)]="model.checkin" />
+            <label class="grid__col--3" for="checkin">Check In</label>
+            <input class="grid__col--9" name="checkin" type="datetime-local" [value]="model.getCheckinString()" [(ngModel)]="model.checkin" />
           </div>
           <div class="input-group">
-            <label for="checkout">Check Out</label>
-            <input name="checkout" type="datetime-local" [value]="model.getCheckoutString()" [(ngModel)]="model.checkout" />
+            <label class="grid__col--3" for="checkout">Check Out</label>
+            <input class="grid__col--9" name="checkout" type="datetime-local" [value]="model.getCheckoutString()" [(ngModel)]="model.checkout" />
           </div>
-          <ul>
+          <ul class="errors">
             <li *ngFor="let error of model.validate()">
-              {{error.label}}: {{error.message}}
+              <span class="grid__col--3">{{error.label}}:</span>
+              <span class="grid__col--9">{{error.message}}</span>
             </li>
           </ul>
-          <button [disabled]="model.validate().length" type="submit">SEARCH!!</button>
+          <div class="input-group">
+            <button [disabled]="model.validate().length" type="submit">SEARCH!!</button>
+          </div>
         </form>
       </div>
     `
