@@ -8,7 +8,7 @@ export class HotelSearch {
   public static initByStoredSettings() {
     const _3days = 3 * 24 * 60 * 60 * 1000;
     return new HotelSearch(
-      'victoria',
+      'Praha',
       new Date(),
       new Date(Date.now() + _3days)
     );
