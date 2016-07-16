@@ -1,3 +1,14 @@
 h1 {
   color: green;
 }
+
+.hotel{
+  &__card {
+    margin:  20px;
+    padding: 20px;
+    box-shadow: 1px 4px 6px #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    cursor: pointer;
+  }
+}
